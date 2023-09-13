@@ -13,7 +13,7 @@ import universidadejemgrupo64.Entidades.Materia;
 
 
 public class MateriaData {
-      private Connection con=null;
+     private Connection con=null;
 
     public MateriaData() {
         
@@ -47,7 +47,7 @@ public class MateriaData {
 
     }
      
-      public Materia buscarMateria (int id) {
+     public Materia buscarMateria (int id) {
      
          String sql= "SELECT idMateria, nombre, año  FROM materia WHERE idMateria = ? AND estado = 1";
         Materia materia=null;
@@ -74,7 +74,7 @@ public class MateriaData {
         return materia;
      }
       
-      public void modificarMateria(Materia materia){
+       public void modificarMateria(Materia materia){
      
      String sql="UPDATE materia SET nombre= ?, año= ? ,estado= ? "
              + "WHERE idMateria = ?";
@@ -95,7 +95,7 @@ public class MateriaData {
         } catch (SQLException ex) {
             JOptionPane.showMessageDialog(null,"Error al acceder ala tabla Materia " );
         }
-     }
+     } 
       
       public void eliminarMateria(int id){
      
@@ -115,8 +115,8 @@ public class MateriaData {
         }
      
      
-     } 
-      
+     }  
+     
        public List<Materia> listarMateria () {
      
          String sql= "SELECT idMateria, nombre, año, estado FROM materia WHERE estado = 1";
@@ -141,7 +141,6 @@ public class MateriaData {
             JOptionPane.showMessageDialog(null,"Error al acceder ala tabla Materia " );
         }
         return materias;
-        
      } 
      
 }
